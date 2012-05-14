@@ -1,5 +1,5 @@
 ## Nested responsive grids
-Generate a responsive grid that maintains it&rsquo;s column sizes two levels deep.
+Generate a responsive grid that maintains it&rsquo;s column sizes two levels deep. <a href="http://davist11.github.com/nested-responsive-grid/">View Demos</a>.
 
 ### Bootstrap&rsquo;s Nested Responsive Grid
 When using another grid framework (like Twitter Bootstrap), nested grids get weird:
