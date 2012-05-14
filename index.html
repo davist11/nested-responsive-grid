@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Nested Responsive Grid : Generate a responsive grid that maintains it’s column sizes two levels deep." />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Nested Responsive Grid</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/davist11/nested-responsive-grid">View on GitHub</a>
+
+          <h1 id="project_title">Nested Responsive Grid</h1>
+          <h2 id="project_tagline">Generate a responsive grid that maintains it’s column sizes two levels deep.</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/davist11/nested-responsive-grid/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/davist11/nested-responsive-grid/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h3>Bootstrap’s Nested Responsive Grid</h3>
+
+<p>When using another grid framework (like Twitter Bootstrap), nested grids get weird:</p>
+
+<blockquote>
+<p>Nesting with fluid grids is a bit different: the number of nested columns doesn't need to match the parent. Instead, your columns are reset at each level because each row takes up 100% of the parent column.</p>
+</blockquote>
+
+<pre>&lt;div class="row-fluid"&gt;
+    &lt;div class="span6"&gt;
+        6
+        &lt;div class="row-fluid"&gt;
+            &lt;div class="span6"&gt;3&lt;/div&gt;
+            &lt;div class="span6"&gt;3&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</pre>
+
+<p>That means that the sub columns will each be a “3” column. But, that 3 column width will not be the same as a standalone 3 column since it is a percentage of another percentage. It’s kind of hard to explain, but the below image should illustrate the problem.</p>
+
+<p><img src="https://github.com/davist11/nested-responsive-grid/raw/master/images/nested-bootstrap.png" alt="Bootstrap Nested Responsive Grid Demo"></p>
+
+<h3>My Nested Responsive Grid</h3>
+
+<p>I hated that. So in my system, a “3” sub-column would equal the width of a standalone 3 column</p>
+
+<pre>&lt;div class="row"&gt;
+    &lt;div class="span6"&gt;
+        6
+        &lt;div class="row"&gt;
+            &lt;div class="span3"&gt;3&lt;/div&gt;
+            &lt;div class="span3"&gt;3&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</pre>
+
+<p><img src="https://github.com/davist11/nested-responsive-grid/raw/master/images/nested.png" alt="Nested Responsive Grid Demo"></p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Nested Responsive Grid maintained by <a href="https://github.com/davist11">davist11</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
