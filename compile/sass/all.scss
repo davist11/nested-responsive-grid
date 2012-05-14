@@ -1,0 +1,108 @@
+$cols: 12;
+$gutter: 2%;
+
+
+$one_col: (100% - ($gutter * ($cols - 1))) / $cols;
+
+@mixin cols($num) {
+	width: ($one_col * $num) + ($gutter * ($num - 1));
+}
+
+@mixin sub_cols($num_child, $num_parent) {
+	$parent_size: ($one_col * $num_parent) + ($gutter * ($num_parent - 1));
+	$child_size: ($one_col * $num_child) + ($gutter * ($num_child - 1));
+	margin-left: ($gutter / $parent_size) * 100%;
+	width: ($child_size / $parent_size) * 100%;
+}
+
+/* @group grid */
+.row {
+	#{enumerate('.span', 1, $cols, '')} {
+		float: left;
+		margin-left: $gutter;
+	}
+
+	@for $i from 1 through $cols {
+		.span#{$i} {
+			@include cols($i);
+			
+			@for $j from 1 through ($i - 1) {
+				.span#{$j} {
+					@include sub_cols($j, $i);
+				}
+			}
+		}
+	}
+	
+	> :first-child,
+	.row > :first-child {
+		margin-left: 0;
+	}
+}
+
+.row:after {
+	clear: both;
+	content: ".";
+	display: block;
+	height: 0;
+	visibility: hidden;
+}
+
+.lte7 .row {
+	height: 1%;
+}
+
+.wrapper {
+	margin: 0 auto;
+	max-width: 1000px;
+}
+/* @end */
+
+
+// Below is just for the demo
+
+
+@import "compass/css3";
+
+/* @group basic reset */
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background: #fff;
+	font: 12px/20px Helvetica, Arial, sans-serif;
+}
+
+* {
+	@include box-sizing(border-box);
+}
+h1 {
+	font-size: 30px;
+	line-height: 36px;
+}
+/* @end */
+
+/* @group extra styling for grid demo */
+.row {
+	background: #dedede;
+	margin-bottom: 20px;
+}
+.row > [class*="span"] {
+	background: #ccc;
+	min-height: 80px;
+	text-align: center;
+	padding: 10px 0;
+}
+
+.row .row {
+	background: none;
+	margin-bottom: 0;
+}
+.row .row > [class*="span"] {
+	background: #aaa;
+	min-height: 100%;
+}
+/* @end */
