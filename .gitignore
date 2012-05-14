@@ -1,0 +1,24 @@
+# Project Files #
+######################
+.sass-cache
+
+# Compiled source #
+###################
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+  
+# Logs and databases #
+######################
+*.log
+*.sqlite
+  
+# OS generated files #
+######################
+.DS_Store
+ehthumbs.db
+Icon?
+Thumbs.db
