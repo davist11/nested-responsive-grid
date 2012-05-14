@@ -20,6 +20,8 @@ That means that the sub columns will each be a &ldquo;3&rdquo; column. But, that
 
 ![Bootstrap Nested Responsive Grid Demo](https://github.com/davist11/nested-responsive-grid/raw/master/images/nested-bootstrap.png)
 
+Notice the difference in column widths and margins across the two rows.
+
 ### My Nested Responsive Grid
 I hated that. So in my system, a &ldquo;3&rdquo; sub-column would equal the width of a standalone 3 column
 
@@ -34,3 +36,5 @@ I hated that. So in my system, a &ldquo;3&rdquo; sub-column would equal the widt
 &lt;/div></pre>
 
 ![Nested Responsive Grid Demo](https://github.com/davist11/nested-responsive-grid/raw/master/images/nested.png)
+
+Notice the how the column widths and margins are maintained across the two rows.
