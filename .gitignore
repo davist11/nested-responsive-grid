@@ -1,6 +1,7 @@
 # Project Files #
 ######################
 .sass-cache
+.rvmrc
 
 # Compiled source #
 ###################
